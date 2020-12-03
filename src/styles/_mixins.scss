@@ -1,0 +1,44 @@
+@function toRem($target, $context: $font-size) {
+  @return $target / $context * 1rem;
+}
+
+//  Import fonts from https://fonts.google.com by name
+@mixin google-font($family){
+  @import url("http://fonts.googleapis.com/css?family=#{$family}");
+}
+
+//  Insert parameters of width and height
+//  if you input only one parameter you will set a square width and height
+@mixin size($width, $height: $width){
+  width: $width;
+  height: $height;
+}
+
+// Media queries for different breakpoints
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @else if $size == tablet-portrait {
+    @media (min-width: 601px) {
+      @content;
+    }
+  }
+  @else if $size == tablet-landscape {
+    @media (min-width: 900px) {
+      @content;
+    }
+  }
+  @else if $size == desktop{
+    @media (min-width: 1280px) {
+      @content;
+    }
+  }
+  @else if $size == big-desktop{
+    @media (min-width: $full-hd){
+      @content
+    }
+  }
+}

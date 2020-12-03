@@ -1,0 +1,45 @@
+:root {
+  font-size: $font-size; // for dynamic size use something like: calc(1vw + 0.6em)
+  font-family: $font-family;
+}
+
+html {
+  background: $background-color;
+  color: $font-color;
+  max-width: 100%;
+  line-height: 1.4;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  max-width: $viewport;
+  min-height: 90vh;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: toRem(50px);
+  text-align: center;
+}
+
+a {
+  color: white;
+}
+
+.nav {
+  text-align: center;
+
+  &__link {
+    font-size: toRem(30px);
+    text-decoration: none;
+  }
+}
